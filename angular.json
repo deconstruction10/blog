@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,12 +94,26 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "blog:build:production"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "324ebd9e-ac96-40b4-b627-472cdc168ee1",
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

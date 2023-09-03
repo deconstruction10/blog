@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "irish-philosophy-blog": {
+      "hosting": {
+        "blog": [
+          "irish-philosophy-blog"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "irish-philosophy-blog"
+  }
+}
