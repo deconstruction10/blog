@@ -1,0 +1,52 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: midnightblue;
+  color: white;
+
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+
+    .login-card {
+      width: 100%;
+
+      mat-card-header {
+        background-color: midnightblue;
+        color: white;
+      }
+
+      mat-form-field {
+        width: 100%;
+        margin-top: 16px;
+        position: relative;
+
+        mat-icon {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+        }
+      }
+
+      button {
+        margin-top: 24px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          background-color: darken(midnightblue, 10%);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .login-container {
+      background-color: transparent;
+    }
+  }
+}

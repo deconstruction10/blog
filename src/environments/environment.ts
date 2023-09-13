@@ -7,5 +7,5 @@ export const environment = {
     authDomain: 'irish-philosophy-blog.firebaseapp.com',
     messagingSenderId: '804071168772',
     measurementId: 'G-291SHLXY4F',
-  },
+  }, recaptchaV3SiteKey: "stackoverflow"
 };

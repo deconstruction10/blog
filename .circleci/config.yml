@@ -2,26 +2,22 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:18.17.0
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Install Dependencies
           command: npm install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run:
           name: Build Angular App
           command: npm run build
       - run:
           name: Run Tests
           command: npm test
-  deploy:
-    docker:
-      - image: circleci/node:14
-    steps:
-      - checkout
-      - run:
-          name: Install Firebase CLI
-          command: npm install -g firebase-tools
-      - run:
-          name: Deploy to Firebase
-          command: firebase deploy --token $FIREBASE_TOKEN --non-interactive --only hosting
