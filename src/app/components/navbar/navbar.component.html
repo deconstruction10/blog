@@ -1,0 +1,32 @@
+<header>
+  <div class="navbar">
+    <img src="./assets/image.png" alt="Logo" class="navbar-logo">
+
+    <div class="auth-buttons">
+      <button *ngIf="(isAuthenticated$ | async)" mat-flat-button class="logout-button" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon> Logout
+      </button>
+      <button *ngIf="!(isAuthenticated$ | async)" routerLink="register" mat-flat-button class="register-button">
+        <mat-icon>person_add</mat-icon> Register
+      </button>
+      <button *ngIf="!(isAuthenticated$ | async)" routerLink="login" mat-flat-button class="login-button">
+        <mat-icon>login</mat-icon> Login
+      </button>
+    </div>
+
+    <div class="menu-and-auth">
+      <button mat-button [matMenuTriggerFor]="menu" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>account_circle</mat-icon> Profile
+        </button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon> Settings
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</header>
